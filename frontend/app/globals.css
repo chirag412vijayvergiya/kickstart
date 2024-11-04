@@ -2,20 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer components {
+  .spinner {
+    margin: 3.2rem auto 1.6rem;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid theme("colors.primary.900");
+    border-right-color: theme("colors.primary.200");
+    animation: rotate 1s infinite linear;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: rgb(8, 3, 34);
+  }
+
+  .spinner-mini {
+    margin: 0;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid theme("colors.primary.200");
+    border-right-color: transparent;
+    animation: rotate 1s infinite linear;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* For data picker */
+.rdp {
+  --rdp-cell-size: 32px !important;
+  --rdp-accent-color: theme("colors.accent.500") !important;
+  --rdp-background-color: theme("colors.accent.600") !important;
+  margin: 0 !important;
+}
+
+/* styles/globals.css */
+/* globals.css */
+/* Bubble keyframe animation for vertical and slight horizontal float */
+@keyframes floatUpDown {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(10px, -20px) rotate(10deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-10px, 0) rotate(-10deg);
+    opacity: 0.9;
+  }
+}
+
+/* General bubble styling */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  animation: floatUpDown 6s ease-in-out infinite;
+  opacity: 0.8;
+  will-change: transform;
+}
+
+/* Different sizes and colors for bubbles with gradient backgrounds */
+.bubble-small {
+  width: 25px;
+  height: 25px;
+  background: radial-gradient(
+    circle,
+    rgba(52, 94, 68, 0.4) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  animation-duration: 8s;
+  animation-delay: calc(-1s * var(--i));
+}
+.bubble-medium {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 153, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  animation-duration: 10s;
+  animation-delay: calc(-1s * var(--i));
+}
+.bubble-large {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(
+    circle,
+    rgba(37, 131, 119, 0.15) 0%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  animation-duration: 12s;
+  animation-delay: calc(-1s * var(--i));
 }

@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ path: "../.env" });
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const { Web3 } = require("web3");

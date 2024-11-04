@@ -9,6 +9,7 @@ contract CampaignFactory {
            deployedCampaigns.push(newCampaign);
     }
 
+    // Because of view we can not modify in this function
      function getDeployedCampaigns() public view returns (address[] memory) {
         return deployedCampaigns;
     }
@@ -28,11 +29,20 @@ contract Campaign {
         // mapping (address => bool) approvals; // Mapping is a reference type
     }
 
+    // requests array will store all the requests of the particular campaign
     Request[] public requests;
+
+    // addreass of the campaign creator
     address public manager;
+
+    // Minimum contribution required to become an approver
     uint public minimumContribution;
     // address payable[] public approvers; 
+
+    // Mapping to track who has contributed to the campaign
     mapping (address => bool) public approvers;
+
+    // 
     mapping(uint => mapping(address => bool)) public approvals; // Mapping to track approvals for each request
     uint public approversCount;
 
@@ -153,5 +163,15 @@ function getRequestByIndex(uint index) public view returns ( uint value, address
      
 
     return (request.value, request.recipient, request.complete, request.approvalCount);
+}
+
+function getSummary() public view returns (uint, uint, uint, uint, address) {
+    return (
+        minimumContribution,
+        address(this).balance,
+        requests.length,
+        approversCount,
+        manager
+    );
 }
 }
