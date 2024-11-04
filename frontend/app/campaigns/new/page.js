@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import factory from "../../../../ethereum/factory";
-import web3 from "../../../../ethereum/web3";
+import factory from "./../../../../ethereum/factory";
+import web3 from "./../../../../ethereum/web3";
 import { useRouter } from "next/navigation";
 
 function Page() {

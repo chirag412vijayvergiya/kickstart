@@ -1,5 +1,5 @@
 import Link from "next/link";
-import factory from "../../ethereum/factory";
+import factory from "./../../ethereum/factory";
 
 async function getDeployedCampaigns() {
   try {

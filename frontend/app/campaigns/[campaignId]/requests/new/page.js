@@ -1,8 +1,8 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import campaign from "../../../../../../ethereum/campaign";
-import web3 from "../../../../../../ethereum/web3";
+import campaign from "./../../../../../../ethereum/campaign";
+import web3 from "./../../../../../../ethereum/web3";
 import { useState } from "react";
 
 function Page() {

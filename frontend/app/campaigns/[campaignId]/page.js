@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import Campaign from "../../../../ethereum/campaign";
+import Campaign from "./../../../../ethereum/campaign";
 import { useState, useEffect } from "react";
 // import web3 from "../../../../ethereum/web3";
 import web3 from "web3";
