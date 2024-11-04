@@ -102,26 +102,30 @@ function Page() {
       </div>
 
       {/* Responsive Table Container */}
-      <div className="w-full max-w-[24rem] xl:max-w-7xl md:max-w-3xl bg-white p-2 rounded-lg shadow-md">
+      <div className="w-full max-w-[22rem] xl:max-w-7xl md:max-w-3xl bg-white p-1 md:p-2 rounded-lg shadow-md">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[600px] border-collapse">
             <thead className="bg-blue-100 text-blue-700 border-b-2 border-blue-200">
               <tr>
-                <th className="py-4 px-6 text-center font-semibold">ID</th>
-                <th className="py-4 px-6 text-center font-semibold">
+                <th className="py-2 md:py-4 px-3 md:px-6 text-center font-semibold">
+                  ID
+                </th>
+                <th className="py-2 md:py-4 px-3 md:px-6 text-center font-semibold">
                   Description
                 </th>
-                <th className="py-4 px-6 text-center font-semibold">
+                <th className="py-2 md:py-4 px-3 md:px-6 text-center font-semibold">
                   Amount (ETH)
                 </th>
-                <th className="py-4 px-6 text-center font-semibold">
+                <th className="py-2 md:py-4 px-3 md:px-6 text-center font-semibold">
                   Recipient
                 </th>
-                <th className="py-4 px-6 text-center font-semibold">
+                <th className="py-2 md:py-4 px-3 md:px-6 text-center font-semibold">
                   Approval Count
                 </th>
-                <th className="py-4 px-6 text-center font-semibold">Approve</th>
-                <th className="py-4 px-6 text-center font-semibold">
+                <th className="py-2 md:py-4 px-3 md:px-6 text-center font-semibold">
+                  Approve
+                </th>
+                <th className="py-2 md:py-4 px-3 md:px-6 text-center font-semibold">
                   Finalize
                 </th>
               </tr>
@@ -140,20 +144,24 @@ function Page() {
                       : ""
                   }`}
                 >
-                  <td className="py-4 px-6 text-center">{index + 1}</td>
-                  <td className="py-4 px-6 text-center">
+                  <td className="py-2 md:py-4 px-3 md:px-6 text-center">
+                    {index + 1}
+                  </td>
+                  <td className="py-2 md:py-4 px-3 md:px-6 text-center">
                     {request.description}
                   </td>
-                  <td className="py-4 px-6 text-center">
+                  <td className="py-2 md:py-4 px-3 md:px-6 text-center">
                     {web3.utils.fromWei(request.value, "ether")}
                   </td>
-                  <td className="py-4 px-6 text-center">{request.recipient}</td>
-                  <td className="py-4 px-6 text-center">
+                  <td className="py-2 md:py-4 px-3 md:px-6 text-center">
+                    {request.recipient}
+                  </td>
+                  <td className="py-2 md:py-4 px-3 md:px-6 text-center">
                     {`${request.approvalCount}/${
                       campaignData?.approversCount || 0
                     }`}
                   </td>
-                  <td className="py-4 px-6 text-center">
+                  <td className="py-2 md:py-4 px-3 md:px-6 text-center">
                     {!request.complete && (
                       <button
                         className="bg-green-500 text-white px-4 py-1 rounded-lg shadow hover:bg-green-600 transition duration-200"
@@ -163,10 +171,10 @@ function Page() {
                       </button>
                     )}
                   </td>
-                  <td className="py-4 px-6 text-center">
+                  <td className="py-2 md:py-4 px-3 md:px-6 text-center">
                     {!request.complete && (
                       <button
-                        className="bg-red-500 text-white px-4 py-1 rounded-lg shadow hover:bg-red-600 transition duration-200"
+                        className="bg-red-500 text-white md:px-4 px-2 py-1 rounded-lg shadow hover:bg-red-600 transition duration-200"
                         onClick={() => handleFinalizeRequest(index)}
                         disabled={request.complete}
                       >
@@ -182,7 +190,7 @@ function Page() {
       </div>
       {/* </div> */}
       {/* Pending Requests Summary */}
-      <div className="w-full max-w-lg md:max-w-3xl text-center mt-6 p-4 bg-white rounded-lg shadow-md">
+      <div className="w-full max-w-lg md:max-w-3xl text-center mt-6 md:p-4 p-2 bg-white rounded-lg shadow-md">
         <p className="text-lg font-medium text-gray-700">
           There are currently{" "}
           <span className="font-bold text-blue-700">{pendingRequests}</span>{" "}
