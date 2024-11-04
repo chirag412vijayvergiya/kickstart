@@ -32,11 +32,11 @@ export default async function Home() {
               key={index}
               className="flex justify-between items-center p-4 border-b last:border-b-0 hover:bg-gray-50 transition duration-200"
             >
-              <span className="text-lg text-gray-700 break-all">
-                {campaign}
+              <span className="text-sm md:text-lg text-gray-700 break-all">
+                <span className="text-blue-500">{index + 1}. </span> {campaign}
               </span>
               <Link href={`/campaigns/${campaign}`}>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200">
+                <button className="bg-blue-500 text-xs md:text-sm text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200">
                   View Details
                 </button>
               </Link>
