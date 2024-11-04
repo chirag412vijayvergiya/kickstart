@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import factory from "./../../ethereum/factory";
 
@@ -12,8 +15,17 @@ async function getDeployedCampaigns() {
   }
 }
 
-export default async function Home() {
-  const campaigns = await getDeployedCampaigns();
+export default function Home() {
+  const [campaigns, setCampaigns] = useState([]);
+
+  useEffect(() => {
+    const fetchCampaigns = async () => {
+      const campaigns = await getDeployedCampaigns();
+      setCampaigns(campaigns);
+    };
+
+    fetchCampaigns();
+  }, []); // Empty dependency array ensures this runs only on mount
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[90vh] bg-gray-100 p-4 md:p-6">
