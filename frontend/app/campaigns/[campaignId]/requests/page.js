@@ -102,7 +102,7 @@ function Page() {
       </div>
 
       {/* Responsive Table Container */}
-      <div className="w-full max-w-lg xl:max-w-7xl md:max-w-3xl bg-white p-2 rounded-lg shadow-md">
+      <div className="w-full max-w-[24rem] xl:max-w-7xl md:max-w-3xl bg-white p-2 rounded-lg shadow-md">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[600px] border-collapse">
             <thead className="bg-blue-100 text-blue-700 border-b-2 border-blue-200">
