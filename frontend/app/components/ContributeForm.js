@@ -28,7 +28,7 @@ function ContributeForm({ address }) {
 
       // Reset amount after successful contribution
       setAmount("");
-      router.replace(`/campaigns/${address}`); // Refresh the current page
+      router.refresh(); // Refresh the current page
     } catch (error) {
       console.error("Error contributing to campaign:", error);
       setError("Failed to contribute. Please check the amount and try again."); // Set a user-friendly error message

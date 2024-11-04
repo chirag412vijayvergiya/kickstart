@@ -6,6 +6,8 @@ const { Web3 } = require("web3");
 const compiledFactory = require("./build/CampaignFactory.json");
 // const { describe } = require("mocha");
 
+// console.log("Web3 provider:", process.env.NEXT_PUBLIC_INFURA_API); // Debugging log to verify the URL
+
 const provider = new HDWalletProvider(
   process.env.NEXT_PUBLIC_MNEMONIC, // Use mnemonic from .env file
   process.env.NEXT_PUBLIC_INFURA_API // Use Infura API from .env file
