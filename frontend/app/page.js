@@ -4,6 +4,7 @@ import factory from "./../../ethereum/factory";
 async function getDeployedCampaigns() {
   try {
     const campaigns = await factory.methods.getDeployedCampaigns().call();
+    console.log("Campaigns:", campaigns);
     return campaigns;
   } catch (error) {
     console.error("Error fetching campaigns:", error);
