@@ -1,4 +1,4 @@
-require("dotenv").config({ path: "../.env" });
+// require("dotenv").config({ path: "../.env" });
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const { Web3 } = require("web3");
@@ -7,8 +7,8 @@ const compiledFactory = require("./build/CampaignFactory.json");
 // const { describe } = require("mocha");
 
 const provider = new HDWalletProvider(
-  process.env.MNEMONIC, // Use mnemonic from .env file
-  process.env.INFURA_API // Use Infura API from .env file
+  process.env.NEXT_PUBLIC_MNEMONIC, // Use mnemonic from .env file
+  process.env.NEXT_PUBLIC_INFURA_API // Use Infura API from .env file
 );
 
 const web3 = new Web3(provider);
