@@ -1,6 +1,6 @@
 import { useState } from "react";
 import campaign from "../../../ethereum/campaign";
-import web3 from "../../../ethereum/web3"; // Ensure you import web3
+import web3 from "../web3"; // Ensure you import web3
 import { useRouter } from "next/navigation";
 
 function ContributeForm({ address }) {

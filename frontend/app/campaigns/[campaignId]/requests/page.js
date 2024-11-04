@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import campaign from "./../../../../../ethereum/campaign";
-import web3 from "./../../../../../ethereum/web3";
+import web3 from "../../../web3";
 import { useState, useEffect, useMemo } from "react";
 
 function Page() {

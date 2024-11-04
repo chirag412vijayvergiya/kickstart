@@ -1,4 +1,4 @@
-import web3 from "./web3";
+import web3 from "../frontend/app/web3";
 import Campaign from "./build/Campaign.json";
 
 export default (address) => {
