@@ -2,7 +2,7 @@ import Web3 from "web3";
 
 let web3;
 
-console.log("Web3 provider:", process.env.NEXT_PUBLIC_INFURA_API); // Debugging log to verify the URL
+// console.log("Web3 provider:", process.env.NEXT_PUBLIC_INFURA_API); // Debugging log to verify the URL
 
 if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
   // We are in the browser and metamask is running.
